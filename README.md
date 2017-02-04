@@ -9,6 +9,9 @@ Angular, Bootstrap, jQuery, HTML, CSS, JavaScript
 Backend technology:
 Node.js express, Handlebars
 
+Bundle Tools:
+Webpack, please run build before starting the server
+
 Features:
 Chat header shows other's users' typing status
 Only fetching newer messages to improve performance
@@ -22,6 +25,7 @@ Handlebars templates are prepared to build other applications
 How-to:
 clone the repository to local
 $npm install
+$npm run build 
 $npm start or using $nodemon if preferred
 Access url localhost:3000/
 enjoy!
@@ -30,3 +34,6 @@ enjoy!
 Need to mention
 The "Stop" button is for testing purpose only
 It will stop the background service
+Node version should support ES2015
+Chat is a component so it's easy to separate chats. In index.hbs, only config one chat directive.
+Add bundle.js in this code in case user forget to run webpack build. 

@@ -1,8 +1,7 @@
 # Do not include node/bower artifacts
 
 node_modules
-web_modules
 **/public/artifacts
 **/assets/artifacts
-
+.*
 npm-debug.log

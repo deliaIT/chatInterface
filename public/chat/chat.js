@@ -1,9 +1,10 @@
-(function () {
+var template = require('./chat.html');
+import "./chat.css"
 
-  var app = angular.module('chat', []);
+var app = angular.module('chat', []);
 
-  //Customized directive to add ng-repeat finish-render listener
-  app.directive('onFinishRender', ['$timeout', function ($timeout) {
+  //Customized directive attribute to add ng-repeat finish-render listener 
+app.directive('onFinishRender', ['$timeout', function ($timeout) {
     return {
       restrict: 'A',
       link: function (scope, el, attr) {
@@ -16,7 +17,7 @@
     }
   }]);
 
-  app.controller('ChatCtrl', ['$scope', '$http', '$interval', '$timeout', function ($scope, $http, $interval, $timeout) {
+app.controller('ChatCtrl', ['$scope', '$http', '$interval', '$timeout', function ($scope, $http, $interval, $timeout) {
 
     var stop, isWaiting = false, isTyping = false, timeoutHandle;
 
@@ -126,11 +127,11 @@
     //First time start the message fetching process
     $scope.startInterval();
 
-  }]);
+}]);
 
   //Directive for both chat windows with isolated scope
   //userId and conversationId are set by backend and sent into this scope by format String
-  app.directive('chatWindow', function () {
+app.directive('chatWindow', function () {
     return {
       restrict: 'E',
       scope: {
@@ -139,8 +140,7 @@
         conversationId: '@'
       },
       controller: 'ChatCtrl',
-      templateUrl: '../templates/chatWindow.html'
+      template: template
     };
-  });
+});
 
-})();

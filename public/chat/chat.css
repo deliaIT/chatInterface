@@ -92,7 +92,8 @@ body{
 .chatInfo {
   height: 20px;
   margin-top: 5px;
-  font-size: 80%
+  font-size: 80%;
+  color: #EEF2E7;
 }
 
 .chat-button {

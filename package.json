@@ -3,7 +3,9 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "node ./bin/www",
+    "build": "webpack --config './public/webpack.config.js'",
+    "build:watch": "webpack --config './public/webpack.config.js' --progress --colors --watch"
   },
   "dependencies": {
     "body-parser": "~1.15.2",
@@ -13,5 +15,14 @@
     "hbs": "~4.0.1",
     "morgan": "~1.7.0",
     "serve-favicon": "~2.3.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.22.1",
+    "babel-loader": "^6.2.10",
+    "babel-preset-es2015": "^6.22.0",
+    "css-loader": "^0.26.1",
+    "html-loader": "^0.4.4",
+    "style-loader": "^0.13.1",
+    "webpack": "^2.2.1"
   }
 }

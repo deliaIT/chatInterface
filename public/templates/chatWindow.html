@@ -1,0 +1,21 @@
+<div class='msg_box'>
+    <div class="msg_head">
+        <div><span ng-bind="userName"></span>'s chat window</div>
+        <div class='chatInfo' ng-bind='chatInfo'></div>
+    </div>
+    <div class="msg_wrap">
+        <div class='msg_body'>
+            <div ng-repeat='msg in msgs' on-finish-render='autoScroll()'>
+                <div ng-class="msg.userId === userId ? 'msg_header_b' : 'msg_header_a'">
+                    {{msg.sender}} <span class='time-stamp'> {{msg.date | date : 'mediumTime'}} </span>
+                </div>
+                <div ng-class="msg.userId === userId ? 'msg_b' : 'msg_a'" ng-bind='msg.content'></div>
+            </div>
+        </div>
+        <div class='msg_footer'>
+            <textarea class="msg_input" rows="4" ng-keypress="keyPress($event)" ng-model="inputMsg"></textarea>
+            <button class='btn btn-primary chat-button' type='button' ng-click='sendMsg()'>Send</button>
+            <!--<button class='btn btn-danger chat-button' type='button' ng-click='stopInterval()'>Stop</button>-->
+        </div>
+    </div>
+</div>

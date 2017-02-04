@@ -1,0 +1,20 @@
+{{#section 'head'}}
+<link rel='stylesheet' href='/stylesheets/style.css' /> {{/section}}
+
+<div ng-app='chat'>
+  <!-- Laura's chat window -->
+  <div class='row'>
+    <div class='col-lg-6 col-md-6 col-sm-12'>
+      <chat-window user-id='{{userId1}}' user-name='{{userName1}}' conversation-id='{{conversationId1}}'></chat-window>
+    </div>
+    <!-- Bob's chat window -->
+    <div class='col-lg-6 col-md-6 col-sm-12'>
+      <chat-window user-id='{{userId2}}' user-name='{{userName2}}' conversation-id='{{conversationId2}}'></chat-window>
+    </div>
+  </div>
+
+</div>
+
+{{#section 'bottom'}}
+<script src="/javascripts/chat.js"></script>
+{{/section}}
